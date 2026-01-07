@@ -1,5 +1,6 @@
-import Tabs from "./components/Tabs";
 import { useState } from "react";
+import Tabs from "./components/Tabs";
+import SearchForm from "./components/SearchForm";
 
 function App() {
 
