@@ -22,7 +22,7 @@ function App() {
    };
 
    const blubClick = () => {
-    setBulb(bulb==="OFF"?"ON":"OFF");
+    setBulb(bb==="OFF"?"ON":"OFF");
    }
    
    return (
