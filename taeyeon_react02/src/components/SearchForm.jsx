@@ -10,7 +10,7 @@ function SearchForm() {
         <>
         검색어 : <input onChange={searchOnChange} /> {searchKeyword}
         </>
-    )
+    );
 }
 
 export default SearchForm;
