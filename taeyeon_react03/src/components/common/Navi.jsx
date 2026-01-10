@@ -1,0 +1,21 @@
+import { Link, useNavigate} from "react-router-dom"
+
+function Navi() {
+    const nav = useNavigate();
+    const onClickButton = () => {
+        nav("/usermenu");
+    }
+    return(
+        <>
+            <div>
+                <Link to={"/"}>Home</Link>
+                <Link to={"/usermenu"}>사용자목록</Link>
+                <Link to={"/timermenu"}>타이머</Link>
+                <button onClick={onClickButton}>사용자목록 버튼</button>
+                <Link to="/simplecountermenu">[간단한 카우터]</Link>
+            </div>
+        </>
+    )
+}
+
+export default Navi;
