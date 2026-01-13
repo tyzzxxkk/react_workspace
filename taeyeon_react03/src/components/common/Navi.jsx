@@ -12,7 +12,8 @@ function Navi() {
                 <Link to={"/usermenu"}>사용자목록</Link>
                 <Link to={"/timermenu"}>타이머</Link>
                 <button onClick={onClickButton}>사용자목록 버튼</button>
-                <Link to="/simplecountermenu">[간단한 카우터]</Link>
+                <Link to="/simplecountermenu">[간단한 카운터]</Link>
+                <Link to="/todomenu">[To do List]</Link>
             </div>
         </>
     )
