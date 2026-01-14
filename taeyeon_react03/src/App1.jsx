@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Navi from "./components/common/Navi";
 import SimpleCounterPage from "./pages/SimpleCounterPage";
 import TodoApp from "./pages/TodoApp";
+import ReducerExam from "./components/todoComponents/ReducerExam";
 import "./App.css"
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
       <Route path="/timermenu" element={<TimerPage />} />
       <Route path="/simplecountermenu" element={<SimpleCounterPage />} />
       <Route path="/todomenu" element={<TodoApp />} />
+      <Route path="reducermenu" element={<ReducerExam />} />
+
+      <Route path="/showItem/:id" element={<ShowItem />} />
       </Routes>
     </BrowserRouter>
   );
