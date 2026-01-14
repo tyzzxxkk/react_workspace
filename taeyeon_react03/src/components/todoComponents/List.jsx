@@ -31,9 +31,4 @@ function List({todo, onDelete, onUpdate}) {
     )
 }
 
-
-
-
-
-
 export default List;
