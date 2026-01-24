@@ -1,0 +1,284 @@
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperozi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
+:root {
+  --yellow: #fbf6a1;
+  --border: #111;
+  --text: #111;
+  --muted: #777;
+  --bg: #fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Paperozi, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  align-items: center;
+}
+
+/* 공통 레이아웃 */
+.page {
+  min-height: 100vh;
+  padding: 48px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 가운데 정렬 핵심 */
+  gap: 22px;
+}
+
+/* Header/Title */
+.title {
+  font-size: 52px;
+  margin: 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* 검색/필터 영역 */
+.controls {
+  width: min(820px, 92vw);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+
+.search {
+  width: 100%;
+  height: 74px;
+  font-size: 28px;
+  padding: 0 22px;
+  border: 2px solid var(--border);
+  outline: none;
+}
+
+.search::placeholder { color: var(--muted); }
+
+.pillRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.selectWrap { position: relative; }
+
+.pillSelect {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: var(--yellow);
+  padding: 18px 58px 18px 26px;
+  border-radius: 999px;
+  font-size: 22px;
+  cursor: pointer;
+  min-width: 220px;
+  text-align: center;
+}
+
+.caret {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-25%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid #000;
+  pointer-events: none;
+}
+
+.pillBtn {
+  border: none;
+  background: var(--yellow);
+  padding: 18px 34px;
+  border-radius: 999px;
+  font-size: 22px;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+.msg { margin-top: 6px; }
+.msg.error { color: #c00; }
+
+.grid {
+  margin-top: 26px;
+
+  /* ✅ 4개가 한 줄일 때 정확히 저 화면처럼 가운데 오게 하는 핵심 */
+  width: calc(190px * 4 + 52px * 3); /* 포스터 4장 + 간격 3개 */
+  max-width: 94vw;
+
+  display: grid;
+  grid-template-columns: repeat(4, 190px);
+  gap: 52px;
+
+  justify-content: center; /* 컨테이너가 좁아져도 중앙 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.posterBtn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.poster,
+.placeholder {
+  width: 190px;
+  height: 270px;
+  background: #d9d9d9;
+  object-fit: cover;
+  display: block;
+}
+
+/* 상세 화면 */
+.detailPage { gap: 26px; }
+
+.detailLayout {
+  margin-top: 14px;
+  width: min(1100px, 94vw);
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.detailPosterBox {
+  display: flex;
+  justify-content: center;
+}
+
+.detailPoster {
+  width: 360px;
+  height: 500px;
+  object-fit: cover;
+  background: #d9d9d9;
+}
+
+.detailText {
+  font-size: 28px;
+  line-height: 1.35;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 14px;
+}
+
+.label { font-weight: 600; }
+.text { white-space: pre-wrap; }
+
+.backBtn {
+  margin-top: 18px;
+  min-width: 260px;
+}
+
+/* 반응형 */
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .detailLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .detailText {
+    font-size: 22px;
+  }
+}
+
+.container{
+  width: min(980px, 94vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ⭐ 제목/폼/그리드 전체 중앙 */
+}
+
+.controls{ width: 100%; }  /* container 폭 기준으로 */
+.grid{ width: 100%; justify-content: center; } /* 포스터 묶음 중앙 */
+
+.loadMoreArea{ margin-top: 10px; }
+
+.h1 {
+  margin-bottom: 30px;
+}
